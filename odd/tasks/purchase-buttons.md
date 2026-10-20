@@ -49,17 +49,18 @@ Expected paths:
 - [x] Add behavior tests for hidden-at-top and visible-after-any-positive-scroll behavior, including desktop and mobile viewport sizes.
 - [x] Remove the offer-position and mobile-only gates; keep the dock under modal overlays and avoid blocking final-page content (the existing footer bottom padding already provides space beyond the dock; modal z-index remains above the dock).
 - [x] Run focused tests and checks.
+- [x] Verify the live page in desktop and mobile browser viewports, including top, first scroll, footer, and modal layering.
 - Route: delegated direct writer; multi-file implementation and test-preparation triggers.
 - Rollback boundary: revert only T2's test, dock behavior/style changes, and this task's progress/evidence.
-- Commit: to be created as `fix(purchase-buttons): show docked CTA after scrolling`.
-- Verification evidence: `node --test tests/*.test.cjs` — RED before implementation (first-scroll CTA test failed on mobile viewport while the dock stayed off), GREEN after implementation (2 passed); `node --check js/main.js` — passed (exit 0); `git diff --check` — passed (exit 0). Manual browser checks at the live preview are parent-owned and pending.
+- Commit: `592446d9479ca804e325fa9210cb9ffef54417e2` (`fix(purchase-buttons): show docked CTA after scrolling`).
+- Verification evidence: `node --test tests/*.test.cjs` — RED before implementation (first-scroll CTA test failed on mobile viewport while the dock stayed off), GREEN after implementation (2 passed); independent verifier and parent spot test each passed 2/2; `node --check js/main.js` — passed (exit 0); `git diff --check` — passed (exit 0). Parent browser verification passed at `http://127.0.0.1:4173/` after cache-bypass reload: desktop 1280×900 and mobile 390×844 both show the dock hidden at scrollY 0 and visible at the first scroll; at the footer it remains visible without obscuring the final link; mobile has no horizontal overflow; modal z-index 70 remains above dock z-index 45; no runtime errors or warnings were observed. All seven `a[data-buy]` elements retain `https://pay.hotmart.com/V108076592A?checkoutMode=2&off=3jpxud41`. No live checkout or purchase was attempted. A regular reload initially served stale JS/CSS; `Page.reload(ignoreCache:true)` loaded the current local files without source changes. Viewport override was reset and the existing user tab was left open on the local page, slightly scrolled with the dock visible. Screenshots: `/home/julian/.codex/visualizations/2026/10/20/01a15710-8fa1-7562-8aa9-b8d33cec1a28/purchase-desktop.jpg` and `/home/julian/.codex/visualizations/2026/10/20/01a15710-8fa1-7562-8aa9-b8d33cec1a28/purchase-mobile.jpg`.
 
 ## Acceptance Criteria
 - All seven source purchase anchors remain usable direct links with their original destination values and no widget-driven removal.
 - The fixed purchase CTA is hidden at `scrollY === 0`, appears for any `scrollY > 0`, and works at mobile and desktop viewport sizes.
 - The CTA remains available around price/footer content, is below modal overlays, and does not block the final content.
 - Tests exercise actual page initialization and scroll behavior through a minimal DOM boundary; do not use source-text grep assertions.
-- Planned verification commands pass; manual browser verification is recorded by the parent.
+- Planned verification commands and parent browser verification pass; checkout execution itself was not tested.
 - Each task closes with its own Conventional Commit including relevant tests and task-document evidence.
 
 ## Baseline and Delivery
@@ -69,4 +70,5 @@ Expected paths:
 - Feature branch: `fix/purchase-buttons`
 - Forecast: under 400 authored changed lines across two small work units; if an honest forecast exceeds 400, stop and inform the parent before committing rather than shrinking tests.
 - Delivery strategy: `ask-on-risk`.
+- Native read-only assessment for `5ecd1af..592446d` (committed slice): risk `medium` / `executable_change`, 257 authored lines, `review_due: false` / `under_budget`. RDD is globally off; delivery status is `disabled/unmanaged`. No review consent or START was requested or run.
 - PR/merge/push/deployment: not authorized.
