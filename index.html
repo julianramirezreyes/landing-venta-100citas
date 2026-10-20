@@ -49,7 +49,7 @@
       <a href="#elegir">Qué cabe hoy</a>
       <a href="#quienes">Para quiénes</a>
       <a href="#preguntas">Preguntas</a>
-      <a class="buy hotmart-fb hotmart__button-checkout" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio y empezar</a>
+      <a class="buy" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio y empezar</a>
     </nav>
   </header>
 
@@ -61,7 +61,7 @@
           <h1>100 citas,<br>una historia</h1>
           <p class="lede">Cien maneras de hacer distinto el tiempo que ya comparten. Jugar, mirar, probar algo, conversar un rato y guardar una parte de lo vivido.</p>
           <div class="hero-actions">
-            <a class="buy hotmart-fb hotmart__button-checkout" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Quiero esta historia</a>
+            <a class="buy" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Quiero esta historia</a>
             <a class="ghost" href="#dentro">Ver qué hay adentro</a>
           </div>
           <p class="micro">Sin orden obligatorio. Sin fecha especial. Con permiso de decir «paso».</p>
@@ -462,7 +462,7 @@
         <div class="stamp-grid" data-passport role="group" aria-label="Pasaporte de cien citas"></div>
         <p class="passport-note">La marca se queda en este navegador. En el PDF, la marca se queda en la página.</p>
         <div class="hero-actions">
-          <a class="buy hotmart-fb hotmart__button-checkout" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Quiero el pasaporte completo</a>
+          <a class="buy" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Quiero el pasaporte completo</a>
         </div>
       </div>
     </section>
@@ -573,7 +573,7 @@
               <li>La pueden vivir en desorden, repetir una favorita y adaptar lo que haga falta.</li>
               <li>Hecha para mandársela a la persona con la que comparten la vida, y hacerla juntos.</li>
             </ul>
-            <a class="buy hotmart-fb hotmart__button-checkout" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio y comprar</a>
+            <a class="buy" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio y comprar</a>
             <p class="micro" style="margin-top: 12px;">La urgencia real es otra: el martes de esta semana también puede quedar en blanco.</p>
           </div>
         </article>
@@ -620,7 +620,7 @@
         <p class="kicker">Verdad entre dos</p>
         <h2>¿Cuál de estas cien historias quieren empezar hoy?</h2>
         <p class="lede">La historia es lo que ustedes vivieron. Amor, honestidad y lealtad, porque lo real se construye entre dos.</p>
-        <a class="buy hotmart-fb hotmart__button-checkout" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Empezar la historia</a>
+        <a class="buy" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Empezar la historia</a>
       </div>
     </section>
   </main>
@@ -633,7 +633,7 @@
 
   <div class="dock" >
     <p>100 citas, una historia</p>
-    <a class="buy hotmart-fb hotmart__button-checkout" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio</a>
+    <a class="buy" data-buy href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio</a>
   </div>
 
   <div class="nudge" id="nudge" hidden>
@@ -645,45 +645,11 @@
       <p>No hace falta una noche libre para empezar. Hay experiencias del largo de un café que se enfría.</p>
       <div class="nudge-actions">
         <a class="ghost" href="#elegir" data-close-nudge>Ver las cortas</a>
-        <a class="buy hotmart-fb hotmart__button-checkout" data-buy data-close-nudge href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio y empezar</a>
+        <a class="buy" data-buy data-close-nudge href="https://pay.hotmart.com/V108076592A?checkoutMode=2&amp;off=3jpxud41">Ver precio y empezar</a>
       </div>
     </div>
   </div>
 
   <script src="js/main.js"></script>
-  <script>
-    function importHotmart() {
-      var imported = document.createElement("script");
-      imported.src = "https://static.hotmart.com/checkout/widget.min.js";
-      document.head.appendChild(imported);
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = "https://static.hotmart.com/css/hotmart-fb.min.css";
-      document.head.appendChild(link);
-    }
-    importHotmart();
-  </script>
-  <style>
-    a.buy.hotmart__button-checkout {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: auto !important;
-      min-height: 52px !important;
-      padding: 0 22px !important;
-      background: #9d4328 !important;
-      background-image: none !important;
-      color: #fbf6ee !important;
-      border: 1px solid #9d4328 !important;
-      border-radius: 999px !important;
-      box-shadow: 0 10px 24px rgba(157, 67, 40, 0.22) !important;
-      font-family: "Outfit", "Avenir Next", sans-serif !important;
-      font-weight: 580 !important;
-      line-height: 1.2 !important;
-      text-decoration: none !important;
-      text-indent: 0 !important;
-    }
-  </style>
 </body>
 </html>
