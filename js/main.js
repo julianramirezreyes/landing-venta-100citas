@@ -10,10 +10,7 @@
     const ratio = height > 0 ? window.scrollY / height : 0;
     progress.style.transform = "scaleX(" + Math.min(1, Math.max(0, ratio)) + ")";
     const dock = document.querySelector(".dock");
-    const offer = document.querySelector("#precio");
-    const offerTop = offer ? offer.getBoundingClientRect().top : 9999;
-    const showDock = window.scrollY > 700 && offerTop > window.innerHeight * 0.4;
-    dock.classList.toggle("is-on", showDock);
+    dock.classList.toggle("is-on", window.scrollY > 0);
   };
   onScroll();
   document.addEventListener("scroll", onScroll, { passive: true });

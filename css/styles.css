@@ -439,6 +439,7 @@ h3 { margin: 0; font-size: 1.55rem; letter-spacing: -0.02em; }
   border-top: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
+.dock.is-on { display: flex; }
 .dock p { margin: 0; font-size: 0.92rem; }
 .dock .buy { min-height: 46px; }
 
@@ -501,7 +502,6 @@ h3 { margin: 0; font-size: 1.55rem; letter-spacing: -0.02em; }
   .facts, .cards { grid-template-columns: 1fr; }
   .date-list article { grid-template-columns: 56px 1fr; }
   .footer { flex-direction: column; }
-  .dock.is-on { display: flex; }
   h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
 }
 

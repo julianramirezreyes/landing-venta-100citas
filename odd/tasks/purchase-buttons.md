@@ -42,17 +42,17 @@ Expected paths:
 - [x] Run focused tests and checks.
 - Route: delegated direct writer; preparation and multi-file implementation trigger.
 - Rollback boundary: revert only T1's test, `index.html` widget-removal change, any strictly necessary widget-specific CSS cleanup, and this task's progress/evidence.
-- Commit: created as `fix(purchase-buttons): restore direct checkout links` (identity to be recorded in the next task-document update).
+- Commit: `7893b7d850f067e5942ad0f1713a665f4041aadf` (`fix(purchase-buttons): restore direct checkout links`).
 - Verification evidence: `node --test tests/*.test.cjs` — RED before source edits (1 failed; all seven anchors were removed by the simulated failed widget load), GREEN after source edits (1 passed); `node --check js/main.js` — passed (exit 0); `git diff --check` — passed (exit 0).
 
 ### T2 — Keep the fixed purchase CTA available after the first scroll
-- [ ] Add behavior tests for hidden-at-top and visible-after-any-positive-scroll behavior, including desktop and mobile layout behavior.
-- [ ] Remove the offer-position and mobile-only gates; keep the dock under modal overlays and avoid blocking final-page content.
-- [ ] Run focused tests and checks.
+- [x] Add behavior tests for hidden-at-top and visible-after-any-positive-scroll behavior, including desktop and mobile viewport sizes.
+- [x] Remove the offer-position and mobile-only gates; keep the dock under modal overlays and avoid blocking final-page content (the existing footer bottom padding already provides space beyond the dock; modal z-index remains above the dock).
+- [x] Run focused tests and checks.
 - Route: delegated direct writer; multi-file implementation and test-preparation triggers.
 - Rollback boundary: revert only T2's test, dock behavior/style changes, and this task's progress/evidence.
-- Commit: pending (`fix(purchase-buttons): show docked CTA after scrolling`).
-- Verification evidence: pending.
+- Commit: to be created as `fix(purchase-buttons): show docked CTA after scrolling`.
+- Verification evidence: `node --test tests/*.test.cjs` — RED before implementation (first-scroll CTA test failed on mobile viewport while the dock stayed off), GREEN after implementation (2 passed); `node --check js/main.js` — passed (exit 0); `git diff --check` — passed (exit 0). Manual browser checks at the live preview are parent-owned and pending.
 
 ## Acceptance Criteria
 - All seven source purchase anchors remain usable direct links with their original destination values and no widget-driven removal.
